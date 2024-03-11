@@ -1,0 +1,29 @@
+body
+{
+    background-color: bisque;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+
+#imagenpajaro img {
+    border-radius: 10px;
+    
+
+}
+
+#historia p {
+    background-color:beige;
+    border-radius: 5px;
+}
+
+#Tittle h2 {
+    background-color:beige;
+    border-radius: 5px;
+    position: relative;
+    border-right: 100px;
+    right: 100;
+}
