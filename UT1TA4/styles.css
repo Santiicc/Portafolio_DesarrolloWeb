@@ -1,0 +1,29 @@
+p+p{
+    background-color: antiquewhite;
+}
+
+div p{
+    font-size: medium;
+    font-style: oblique;
+}
+
+div>p {
+    text-align: center;
+}
+
+h1~p{
+    color: red;
+}
+
+h1{
+    text-align: center;
+    background-color: green;
+    border-radius: 5px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn:hover{
+    background-color:blue;
+    border-radius: 5px;
+}
