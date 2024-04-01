@@ -1,0 +1,144 @@
+body {
+    margin: 0%;
+    background-color: rgb(139, 226, 139);
+    font-family: Arial, sans-serif;
+}
+
+#gral {
+    display: flex;
+    flex-wrap: wrap; /* Para que los bloques se envuelvan en pantallas pequeñas */
+    justify-content: space-around;
+    align-items: flex-start; /* Cambiamos align-content por align-items para alinear los elementos en el inicio */
+}
+
+#FakeTrello {
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(234, 173, 92);
+    text-align: center;
+    color: antiquewhite;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 5px;
+    
+}
+
+.block {    
+    background-color: beige;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+   
+    padding: 10px; 
+    box-sizing: border-box; 
+    border: 1px solid black;
+    
+}
+
+.TaskName{
+    text-shadow: 1px 1px 1px grey;
+    font-style: oblique;
+}
+
+.Add{
+    background-color: rgb(243, 220, 220);
+    border-radius: 5px;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.Add:hover{
+    background-color: white;
+}
+
+.Tareas {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.Tareas button {
+    background-color: rgb(243, 220, 220);
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.Tareas button:hover {
+    background-color: white;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Fondo oscuro semi-transparente */
+  }
+
+  #prueba{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+
+
+  @media (max-width: 322px) {
+    #gral {
+        flex-direction:column;
+        align-items: center;
+        .block{
+            width: 80%;
+            .Tareas{
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (min-width: 322px ) and (max-width:768px) {
+    #gral {
+        flex-direction:column;
+        align-items: center;
+    }
+    .block{
+        width: 80%;
+        .Tareas{
+            flex-direction: column;
+        }
+    }
+}
+
+@media(min-width:768px) {
+    #gral {
+        flex-direction:row;
+        align-items: center;
+    }
+    .block{
+        width: 25%;
+        height: 70vh;
+        .Tareas{
+            flex-direction: column;
+        }
+    }
+
+}
