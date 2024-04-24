@@ -21,54 +21,153 @@
         
         <div class="block">
             <h3 class="TaskName">ToDo</h3>
-            <div id="prueba">
+        
             <div class="Tareas" id="TareasToDo">
-                <button>
-                    <p>Tarea12</p>
-                </button>
-                <button>
-                    <p>Tarea13</p>
-                </button>
+                
                 
             </div>
-            <button class="Add" onclick='agregarTareaToDo()'><i class="fa-solid fa-plus"></i></button>
-            </div>
+            <button class="Add" id="add"  onclick="(() => displayadd())()"><i class="fa-solid fa-plus"></i></button>
+           
         </div>
     
         <div class="block" >
             <h3 class="TaskName">Doing</h3>
             <div class="Tareas" id="TareasDoing">
-                <button>
-                    <p>Tarea14</p>
-                </button>
-                <button>
-                    <p>Tarea15</p>
-                </button>
-                
+    
             </div>
-            <button class="Add" onclick='agregarTareaDoing()'><i class="fa-solid fa-plus"></i></button>
+            <button class="Add" id="add" onclick="(() => displayadd())()"><i class="fa-solid fa-plus"></i></button>
         </div>
     
         <div class="block">
             <h3 class="TaskName">Done</h3>
             <div class="Tareas" id="TareasDone">
-                <button>
-                    <p>Tarea16</p>
-                </button>
-                <button>
-                    <p>Tarea17</p>
-                </button>
-                
+               
             </div>
-            <button class="Add" onclick='agregarTareaDone()'>
+            <button class="Add" id="add" onclick="(() => displayadd())()">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </div>
+        
+    </div>
 
+    <div id="modal" class="modal">
+        <div id="content">
+          <span class="modalClose">&times;</span>
+          <h3 id="Titulo">Descripcion de la tarea</h3>
+          <div id="taskid"></div>
+          <div id="taskdesc"></div>
+          <div id="taskassigned"></div>
+          <div id="taskpriority"></div>
+          <div id="taskstartdate"></div>
+          <div id="taskenddate"></div>
+          <div id="taskcomments"></div>
+          <div id="taskstatus"></div>
+        </div>
     </div>
 
 
+    <div id="modaladd" class="modaladd">
+        <div id="contentadd">
+          <span class="modaladdClose">&times;</span>
+          <h3 id="Titulo">Crear Nueva Tarea</h3>
+     
+          <input type="text" id='name' placeholder="Nombre de la tarea" class="inputadd">
+          <input type="text" name="" id="descriptiontask" placeholder="Descripcion" class="inputadd">
+          <input type="text" name="" id="assignedto" placeholder="Responsable"class="inputadd">
+          <select id="priority" class="inputadd">
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+          </select>
+          <input placeholder="Fecha de Fin de la Tarea" type="date" name="" id="EndDate" class="inputadd">
+          <input type="text" name="" id="comments" placeholder="Comentarios"class="inputadd">
+          <select id="opcionesstatus" class="inputadd">
+            <option value="ToDo">ToDo</option>
+            <option value="Doing">Doing</option>
+            <option value="Done">Done</option>
+          </select>
+          <button id='buttonsend' class="Add"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
 
-    <script src="logic.js"></script>
+      
+
+      
+
+    <script defer src="logic.js"></script>
+    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+// Obtener el modal y el botón para abrirlo
+var modalAgregarTarea = document.getElementById("modalAgregarTarea");
+var btnAgregarTarea = document.querySelector(".Add");
+
+// Obtener el botón de cierre del modal
+var modalClose = document.querySelector(".modalClose");
+
+// Mostrar el modal cuando se hace clic en el botón
+btnAgregarTarea.onclick = function() {
+  modalAgregarTarea.style.display = "block";
+}
+
+// Cerrar el modal cuando se hace clic en el botón de cierre
+modalClose.onclick = function() {
+  modalAgregarTarea.style.display = "none";
+}
+
+// Cerrar el modal cuando se hace clic fuera de él
+window.onclick = function(event) {
+  if (event.target == modalAgregarTarea) {
+    modalAgregarTarea.style.display = "none";
+  }
+}
+
+// Manejar el envío del formulario
+var formAgregarTarea = document.getElementById("formAgregarTarea");
+formAgregarTarea.addEventListener("submit", function(event) {
+  event.preventDefault(); // Evitar que se recargue la página
+  
+  // Obtener los valores del formulario
+  var nombreTarea = document.getElementById("nombreTarea").value;
+  var descripcionTarea = document.getElementById("descripcionTarea").value;
+  
+  // Agregar la tarea utilizando los valores
+  agregarTarea(nombreTarea, descripcionTarea);
+  
+  // Cerrar el modal
+  modalAgregarTarea.style.display = "none";
+});
+
+// Función para agregar la tarea al DOM
+function agregarTarea(nombre, descripcion) {
+  // Crear elementos de la tarea
+  var nuevoBoton = document.createElement("button");
+  var nuevoParrafo = document.createElement("p");
+  nuevoParrafo.textContent = nombre;
+  nuevoBoton.Description = descripcion; // Agregar descripción al botón
+  
+  // Agregar botones de editar, borrar, mover y leer
+  // (Omite este código para simplificar)
+  
+  // Agregar el nuevo botón al DOM
+  document.getElementById("TareasToDo").appendChild(nuevoBoton);
+}
+
+-->

@@ -3,15 +3,16 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url('mountains.jpeg');
+    background-image: url('noche.jpg');
     font-family: Arial, sans-serif;
 }
 
 #gral {
+
     display: flex;
-    flex-wrap: wrap; /* Para que los bloques se envuelvan en pantallas pequeñas */
+    flex-wrap: wrap; 
     justify-content: space-around;
-    align-items: flex-start; /* Cambiamos align-content por align-items para alinear los elementos en el inicio */
+    align-items: flex-start; 
 }
 
 #FakeTrello {
@@ -20,7 +21,7 @@ body {
     border-radius: 5px;
     background-color: rgb(159, 104, 20);
     text-align: center;
-    color: antiquewhite;
+    color: rgb(251, 249, 249);
     font-style: oblique;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 5px;
@@ -32,19 +33,27 @@ body {
     text-align: center;
     border-radius: 5px;
     margin: 5px;
-    overflow-y: auto;
     padding: 10px; 
     box-sizing: border-box; 
     border: 1px solid black;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+::placeholder{
+    color: #000000;
+    font-style: oblique;
+}
+.inputadd{
     
+    border: solid 1px black;
+    border-radius: 2px;
+    background-color: #6a4343;
 }
 
 .TaskName{
-    color:white;
-}
-
-.TaskName{
-    text-shadow: 1px 1px 1px grey;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
     font-style: oblique;
 }
 
@@ -60,27 +69,122 @@ body {
 }
 
 .Tareas {
+    
     display: flex; 
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
+    
 }
 
 .Tareas button {
-    background-color: rgb(243, 220, 220);
+    background-color: rgb(172, 166, 166);
     border: 1px solid black;
     border-radius: 7px;
     padding: 5px;
     margin: 5px;
+    cursor: pointer;
 }
 
 .Tareas button:hover {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    backdrop-filter: blur(100px);
+    
+  }
+  
+  
+  #content {
+    color: rgb(255, 255, 255);
+    background-color: #242424;
+    margin: 20% auto; 
+    padding: 20px;
+    border: 1px solid #020202;
+    border-radius: 2px;
+    width: 50%; 
+  }
+  
 
+  .modalClose {
+    color: #aaa;
+    float:inline-end;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modalClose:hover,
+  .modalClose:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 
-  @media (max-width: 322px) {
+  .modaladd {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow-y: auto    ; 
+    backdrop-filter: blur(100px);
+    flex-wrap: nowrap;
+  }
+
+  .inputadd{
+    width: fit-content;
+  }
+  
+  
+  #contentadd {
+    color: rgb(255, 255, 255);
+    background-color: #242424;
+    margin: 20% auto; 
+    padding: 20px;
+    border: 1px solid #020202;
+    border-radius: 2px;
+    width: 50%; 
+  }
+  
+
+  .modaladdClose {
+    color: #aaa;
+    float:inline-end;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modaladdClose:hover,
+  .modaladdClose:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #Titulo{
+    color:rgb(249, 247, 245);
+    border: solid 2px rgb(255, 255, 255);
+    width:fit-content;
+    border-radius: 2px;
+    background-color: rgb(10, 11, 11);
+  }
+
+@media (max-width: 322px) {
+    body{
+        height: 100vh;
+    }
     #gral {
         flex-direction:column;
         align-items: center;
@@ -94,9 +198,13 @@ body {
 }
 
 @media (min-width: 322px ) and (max-width:768px) {
+    body{
+        height: 100vh;
+    }
     #gral {
         flex-direction:column;
         align-items: center;
+
     }
     .block{
         width: 80%;
@@ -104,10 +212,14 @@ body {
             flex-direction: column;
         }
     }
+   
+   
 }
 
 @media(min-width:768px) {
-    #body{background-size: cover;}
+    body{
+        height: 100vh;
+    }
     #gral {
         flex-direction:row;
         align-items: center;
@@ -121,5 +233,3 @@ body {
     }
 
 }
-
-
