@@ -1,0 +1,37 @@
+.green {
+    background-color: green;
+    border: 0.5px solid black;
+    border-radius: 2px ;
+    margin: 7px;
+}
+
+
+.red {
+    background-color: rgb(128, 0, 0);
+    border: 0.5px solid black;
+    border-radius: 2px ;
+    margin: 7px;
+    
+}
+
+
+.blue {
+    background-color: rgb(35, 35, 214);
+    border: 0.5px solid black;
+    border-radius: 2px ;
+    margin: 7px;
+}
+
+.yellow{
+    background-color: rgb(255, 234, 46);
+    border: 0.5px solid black;
+    border-radius: 2px ;
+    margin: 7px;
+}
+
+.orange{
+    background-color: rgb(236, 160, 54);
+    border: 0.5px solid black;
+    border-radius: 2px ;
+    margin: 7px;
+}

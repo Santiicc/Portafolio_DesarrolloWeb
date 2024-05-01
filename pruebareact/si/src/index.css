@@ -1,0 +1,10 @@
+#cont{
+  align-items: center;
+  background-color: rgb(132, 113, 91);
+  text-align: center;
+  justify-content: space-around;
+}
+
+body{
+  background-color: bisque;
+}
